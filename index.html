@@ -1,13 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donut Clicker</title>
-  </head>
-  <body>
-    <div class="container"></div>
-    <script src="./index.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donut Clicker</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/layout.css">
+</head>
+
+<header>
+  <nav>
+    <div class="dropdown">
+      <h1>About Fred the Baker</h1>
+      <div class="dropdown-content">
+        <p>Fred the baker has been baking some of the best donuts since 1988. Receiving awards ranging from "<em>Baker
+            Of
+            The Year</em>", "<em>Bakery Manufacturer of the Year</em>", and the "<em>Rising Star Award.</em>"</p>
+        <a href="https://wecancodeit-materials.netlify.app/exercises/mastery/cookie-click-counter-calamity/">More About
+          Fred</a>
+      </div>
+    </div><br>
+  </nav>
+  <div class="dropdown">
+    <h1>Cookie Clicker</h1>
+    <div class="dropdown-content">
+      <a href="https://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>
+    </div>
+  </div><br>
+  <div class="dropdown">
+    <h1>About the Developer</h1>
+    <div class="dropdown-content">
+      <a href="https://github.com/MartelBarkley">Github</a>
+      <a href="https://martelbarkley.github.io/">Portfolio</a>
+    </div>
+  </div>
+  <button id="resetBtn">Reset Game</button>
+  </nav>
+</header>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="left">
+        <aside>
+          <h1>Lets Make Some Donuts</h1>
+          <button id="createDonut"> <img id="donutPic" src="/Images/martel-donut.jpg"></button>
+          <h2 id="currentDonutCount">Donut Count</h2>
+          <h3 id="dountCount"></h3>
+          </section>
+      </div>
+      </aside>
+      <div class="center">
+        <section id="myMultiplierBtn">
+          <h1>Multiply Your Donuts</h1>
+          <button class="donutMultiplierBtn">Click Here to Multiply Your Supply</button>
+          <div id="multi">
+            <h2>Multipliers Owned <h2 id="multiplierCount"></h2>
+            </h2>
+            <h3>Donut Multiplier Cost <h3 id="multiplierCost"></h3>
+            </h3>
+          </div>
+        </section>
+      </div>
+
+      <div class="right">
+        <aside>
+          <section id="myAutoBtn">
+            <h1>CLICKERS-CLICKERS</h1>
+            <button class="autoClicker">Click Here To Purchase an Auto Clicker</button>
+            <div id="auto">
+              <h2>Auto Clickers Owned <h2 id="autoCount">
+                  <h2></h2>
+                  <h3>Auto Clicker Cost <h3 id="autoCostNumber"></h3>
+                  </h3>
+          </section>
+        </aside>
+      </div>
+    </div>
+
+    <footer>&copy; Martel Barkley 2022</footer>
+  </main>
+  <script src="./donut-maker.js"></script>
+  <script src="./donut-maker-app.js"></script>
+
+
+</body>
+
 </html>
