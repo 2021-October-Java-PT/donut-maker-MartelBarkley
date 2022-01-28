@@ -1,14 +1,18 @@
-const currentDonutCount = document.querySelector('#currentDonutCount')
+const currentDonutCount = document.querySelector('.currentDonutCount')
+const clickerCost = document.querySelector('.clickerCost')
+const multiplierCost = document.querySelector('.multiplierCost')
+const donutsPerClick = document.querySelector('.donutsPerClick')
+
 
 
 class DonutMaker {
 
-    constructor(donutCount, autoClickerCount, autoClickerCost, donutMultiplierCost, donutMultiplierCount) {
-        this.donutCount = donutCount;
-        this.autoClickerCount = autoClickerCount;
-        this.autoClickerCost = autoClickerCost;
-        this.donutMultiplierCost = donutMultiplierCost;
-        this.donutMultiplierCount = donutMultiplierCount;
+    constructor() {
+        this.donutCount = 0;
+        this.autoClickerCount = 0;
+        this.autoClickerCost = 100;
+        this.donutMultiplierCost = 10;
+        this.donutMultiplierCount = 1;
 
     }
 
@@ -31,19 +35,24 @@ class DonutMaker {
     }
 
     getDonutMultiplierCount() {
-        return this.donutMultiplierCount
+        return this.donutMultiplierCount;
     }
 
     clickDonut() {
-        this.donutCount += 1 * this.donutMultiplierCount;
+        // this.donutCount += 1;
+        this.donutMultiplierCount = this.donutMultiplierCount * 1;
+        this.donutCount += this.donutMultiplierCount;
+        
+
     }
 
 
     purchaseMultiplier() {
         if (this.donutCount >= this.donutMultiplierCost) {
             this.donutCount -= this.donutMultiplierCost;
-            this.donutMultiplierCount *= 1.2;
-            this.donutMultiplierCost *= 1.1;
+            this.donutMultiplierCount += 1;
+            this.donutMultiplierCost = this.donutMultiplierCost * 1.1;
+            
 
         }
     }
@@ -51,19 +60,24 @@ class DonutMaker {
 
     purchaseAutoClicker() {
         if (this.donutCount >= this.autoClickerCost) {
-            this.donutCount -= this.autoClickerCost;
+            this.donutCount = this.donutCount - this.autoClickerCost;
             this.autoClickerCount += 1;
-            this.autoClickerCost *= 1.1;
+            this.autoClickerCost  = this.autoClickerCost* 1.1;
         }
     }
 
     addDonutToAutoClicker() {
         if (this.autoClickerCount >= 1) {
             setInterval(() => {
-                this.donutCount += (this.autoClickerCount * 1);
+                this.donutCount += this.donutMultiplierCount * this.autoClickerCount;
+                this.donutCount += this.autoClickerCount * 1;
                 currentDonutCount.innerText = this.getDonutCount();
             }, 1000);
         }
+    }
+
+    updateDonutCount() {
+        currentDonutCount.innerText = Math.round(this.donutCount);
     }
 
     reset() {

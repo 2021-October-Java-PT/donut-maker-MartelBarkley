@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Donut Clicker</title>
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/layout.css">
 </head>
 
 <header>
@@ -22,7 +21,7 @@
           Fred</a>
       </div>
     </div><br>
-  </nav>
+  <!-- </nav> -->
   <div class="dropdown">
     <h1>Cookie Clicker</h1>
     <div class="dropdown-content">
@@ -36,7 +35,7 @@
       <a href="https://martelbarkley.github.io/">Portfolio</a>
     </div>
   </div>
-  <button id="resetBtn">Reset Game</button>
+  <button class="resetBtn">Reset Game</button>
   </nav>
 </header>
 
@@ -45,43 +44,36 @@
     <div class="container">
       <div class="left">
         <aside>
-          <h1>Lets Make Some Donuts</h1>
-          <button id="createDonut"> <img id="donutPic" src="/Images/martel-donut.jpg"></button>
-          <h2 id="currentDonutCount">Donut Count</h2>
-          <h3 id="dountCount"></h3>
+          <h2>Lets Make Some Donuts</h2>
+          <button class="createDonutBtn"> <img id="donutPic" src="/Images/martel-donut.jpg"></button>
+          <h2>Donut Count <span class="currentDonutCount"><br>0</span></h2>
+
           </section>
       </div>
       </aside>
       <div class="center">
-        <section id="myMultiplierBtn">
-          <h1>Multiply Your Donuts</h1>
-          <button class="donutMultiplierBtn">Click Here to Multiply Your Supply</button>
-          <div id="multi">
-            <h2>Multipliers Owned <h2 id="multiplierCount"></h2>
-            </h2>
-            <h3>Donut Multiplier Cost <h3 id="multiplierCost"></h3>
-            </h3>
-          </div>
+        <section class="myMultiplierBtn">
+          <h2>Multiply Your Donuts </h2>
+          <button class="donutMultiplierBtn"> <img id="donutPic" src="/Images/martel-donut.jpg"></button>
+          <h2>Multiplier Count <span class="numberOfMultipliers ">0</span></h2>
+          <h2>Multiplier Cost <span class="multiplierCost ">10</span></h2>
         </section>
       </div>
 
       <div class="right">
         <aside>
           <section id="myAutoBtn">
-            <h1>CLICKERS-CLICKERS</h1>
-            <button class="autoClicker">Click Here To Purchase an Auto Clicker</button>
-            <div id="auto">
-              <h2>Auto Clickers Owned <h2 id="autoCount">
-                  <h2></h2>
-                  <h3>Auto Clicker Cost <h3 id="autoCostNumber"></h3>
-                  </h3>
+            <h2>CLICKERS-CLICKERS</h2>
+            <button class="autoClickerBtn"> <img id="donutPic" src="/Images/martel-donut.jpg"></button>
+            <h2>Auto Clicker Count <span class="numberOfClicks ">0</span></h2>
+            <h2>Auto Clicker Cost <span class="clickerCost ">100</span></h2>
           </section>
         </aside>
       </div>
     </div>
 
-    <footer>&copy; Martel Barkley 2022</footer>
   </main>
+  <footer>&copy; Martel Barkley 2022</footer>
   <script src="./donut-maker.js"></script>
   <script src="./donut-maker-app.js"></script>
 
